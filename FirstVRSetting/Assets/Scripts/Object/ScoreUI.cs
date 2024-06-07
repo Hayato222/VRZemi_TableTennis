@@ -16,9 +16,7 @@ namespace ObjectTarget
 
         void Update()
         {
-            var scoreUIText = inPlayScoreUI.GetComponent<Text>();
-            Action ScoreCounter = () => { scoreUIText.text = ("現在のスコア：" + score.FallenCanCount); };
-            ScoreCounter();
+            inPlayScoreUI.text = "Score : " + score.FallenCanCount;
         }
     }
 }
