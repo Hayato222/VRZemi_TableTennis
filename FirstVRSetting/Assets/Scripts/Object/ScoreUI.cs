@@ -10,9 +10,6 @@ namespace ObjectTarget
     {
         public Score score;
         public TextMeshProUGUI inPlayScoreUI;
-        void Start()
-        {
-        }
 
         void Update()
         {

@@ -21,9 +21,8 @@ namespace ObjectTarget
             {
                 HitRacket();
             }
-            
         }
-        
+
 
         void BoundBall()
         {
@@ -34,7 +33,5 @@ namespace ObjectTarget
         {
             HitRacketSet.PlayOneShot(HitRacketSE);
         }
-        
-        
     }
 }
