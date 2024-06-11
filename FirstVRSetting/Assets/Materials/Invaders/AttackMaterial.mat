@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: FirstLineUnvaders
+  m_Name: AttackMaterial
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -79,6 +79,6 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.6509804, g: 0, b: 0.65882355, a: 1}
-    - _EmissionColor: {r: 1.5253043, g: 0, b: 1.5662901, a: 1}
+    - _Color: {r: 0.8773585, g: 0.7845225, b: 0.19450872, a: 1}
+    - _EmissionColor: {r: 0.7454045, g: 0.57758063, b: 0.03189604, a: 1}
   m_BuildTextureStacks: []

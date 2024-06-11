@@ -4,18 +4,15 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace ObjectTarget
+namespace Enemy
 {
     public class MoveTarget : MonoBehaviour
     {
-        [SerializeField] private float speed = 1f;
+        [SerializeField] private float sideMovementlSpeed = 1f;
         [SerializeField] private float moveRange = 0.6f;
+        [SerializeField] private float verticalMovementSpeed = 1f;
         bool overMoveRange = true;
-        void Start()
-        {
-            
-        }
-
+        private bool endOfRange = false;
        void Update()
        {
            Transform target = this.transform;
@@ -29,25 +26,27 @@ namespace ObjectTarget
            else if(pos.z <= -moveRange)
            {
                overMoveRange = false;
+               endOfRange = true;
            }
            
-           
-
            if (overMoveRange)
            {
-               pos.z -= speed;
+               pos.z -= sideMovementlSpeed;
            }
            else
            {
-               pos.z += speed;
+               pos.z += sideMovementlSpeed;
            }
+
+           if (endOfRange)
+           {
+               pos.x += verticalMovementSpeed;
+               endOfRange = false;
+           }
+           
+             
 
            target.position = pos;
        }
-
-        private void OnCollisionEnter(Collision other)
-        {
-            Debug.Log("hit");
-        }
     }
 }
