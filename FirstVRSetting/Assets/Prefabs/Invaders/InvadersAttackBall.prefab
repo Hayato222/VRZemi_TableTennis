@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 4639262717272396247}
   - component: {fileID: 6880221777536276678}
   - component: {fileID: 459020493708003696}
+  - component: {fileID: 6540432810230929133}
   m_Layer: 0
   m_Name: InvadersAttackBall
-  m_TagString: Ball
+  m_TagString: InvadersAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -128,8 +129,20 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &6540432810230929133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7070802303293541006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 965f8ff157df74c46b3acb6725640857, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -8,13 +8,13 @@ namespace ObjectTarget
 {
     public class ScoreUI : MonoBehaviour
     {
-        public Score score;
+        public PlayData data;
         public TextMeshProUGUI inPlayScoreUI;
         [SerializeField] private float InvadersPoint = 200f;
 
         void Update()
         {
-            inPlayScoreUI.text = "Score : " + score.DieInvaderCount * InvadersPoint;
+            inPlayScoreUI.text = "Score : " + data.KillCount() * InvadersPoint;
         }
     }
 }

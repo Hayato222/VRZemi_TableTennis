@@ -9,6 +9,7 @@ TagManager:
   - Table
   - Racket
   - Invader
+  - InvadersAttack
   layers:
   - Default
   - TransparentFX

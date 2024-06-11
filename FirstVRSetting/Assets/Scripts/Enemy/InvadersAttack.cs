@@ -29,7 +29,7 @@ public class InvadersAttack : MonoBehaviour
 
                 ballRigidbody = ball.GetComponent<Rigidbody>();
 
-                ballRigidbody.AddForce(new Vector3(power, power, 0f), ForceMode.Impulse);
+                ballRigidbody.AddForce(new Vector3(power, 0f, 0f), ForceMode.Impulse);
                 
                 se.shotSE();
 
@@ -42,6 +42,7 @@ public class InvadersAttack : MonoBehaviour
 
     int OrAttackNumber()
     {
+        //1/attackFrequencyの確率で攻撃する
         int rand = Random.Range(1, attackFrequency);
         return rand;
     }

@@ -50,7 +50,7 @@ namespace ObjectTarget
     
         private void OnCollisionEnter(Collision collision)
         {
-            if (collision.gameObject.CompareTag("Ball"))
+            if (collision.gameObject.CompareTag("Ball") || collision.gameObject.CompareTag("InvadersAttack"))
             {
                 Rigidbody ballRigidbody = collision.gameObject.GetComponent<Rigidbody>();
                 if (ballRigidbody != null)

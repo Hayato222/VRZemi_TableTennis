@@ -5,13 +5,13 @@ using UnityEngine;
 
 public class InvadersDestroy : MonoBehaviour
 {
-    public Score score;
+    public PlayData data;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Ball"))
         {
             Debug.Log("ぴゅーん！！");
-            score.DieInvaderCount++;
+            data.addKill();
             Destroy(this.gameObject);
         }
     }
