@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Reflection;
+using ObjectTarget;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -11,42 +12,46 @@ namespace Enemy
         [SerializeField] private float sideMovementlSpeed = 1f;
         [SerializeField] private float moveRange = 0.6f;
         [SerializeField] private float verticalMovementSpeed = 1f;
+        public GameManager game;
         bool overMoveRange = true;
         private bool endOfRange = false;
        void Update()
        {
-           Transform target = this.transform;
-           Vector3 pos = target.position;
-           
-           
-           if (pos.z >= moveRange)
+           if (game.inPlay)
            {
-               overMoveRange = true;
-           }
-           else if(pos.z <= -moveRange)
-           {
-               overMoveRange = false;
-               endOfRange = true;
-           }
-           
-           if (overMoveRange)
-           {
-               pos.z -= sideMovementlSpeed;
-           }
-           else
-           {
-               pos.z += sideMovementlSpeed;
-           }
+               Transform target = this.transform;
+               Vector3 pos = target.position;
 
-           if (endOfRange)
-           {
-               pos.x += verticalMovementSpeed;
-               endOfRange = false;
+
+               if (pos.z >= moveRange)
+               {
+                   overMoveRange = true;
+               }
+               else if (pos.z <= -moveRange)
+               {
+                   overMoveRange = false;
+                   endOfRange = true;
+               }
+
+               if (overMoveRange)
+               {
+                   pos.z -= sideMovementlSpeed;
+               }
+               else
+               {
+                   pos.z += sideMovementlSpeed;
+               }
+
+               if (endOfRange)
+               {
+                   pos.x += verticalMovementSpeed;
+                   endOfRange = false;
+               }
+
+
+               target.position = pos;
            }
            
-             
-
-           target.position = pos;
        }
     }
 }

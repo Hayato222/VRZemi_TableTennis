@@ -11,7 +11,7 @@ public class InvadersDestroy : MonoBehaviour
         if (other.CompareTag("Ball"))
         {
             Debug.Log("ぴゅーん！！");
-            data.addKill();
+            data.AddKill();
             Destroy(this.gameObject);
         }
     }

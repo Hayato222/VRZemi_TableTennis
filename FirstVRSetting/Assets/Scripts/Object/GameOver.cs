@@ -11,7 +11,7 @@ public class GameOver : MonoBehaviour
     {
         if (other.CompareTag("Invader"))
         {
-            game.stopGame();
+            game.inPlay = false;
         }
     }
 }

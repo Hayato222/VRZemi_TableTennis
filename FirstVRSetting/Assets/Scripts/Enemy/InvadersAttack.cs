@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using ObjectTarget;
 using UnityEngine;
 
 public class InvadersAttack : MonoBehaviour
@@ -9,6 +10,7 @@ public class InvadersAttack : MonoBehaviour
     [SerializeField] private float power = 0.01f;
     [SerializeField] private int attackFrequency = 5;
     public InvadersAttackSE se;
+    public GameManager game;
 
     void Start()
     {
@@ -19,24 +21,27 @@ public class InvadersAttack : MonoBehaviour
     {
         while (true)
         {
-            int rand = OrAttackNumber();
-            if (rand == 1)
+            if (game.inPlay)
             {
-                GameObject ball;
-                Rigidbody ballRigidbody;
+                int rand = OrAttackNumber();
+                if (rand == 1)
+                {
+                    GameObject ball;
+                    Rigidbody ballRigidbody;
 
-                ball = Instantiate(ballPrefab, SpawnPoint.position, Quaternion.identity);
+                    ball = Instantiate(ballPrefab, SpawnPoint.position, Quaternion.identity);
 
-                ballRigidbody = ball.GetComponent<Rigidbody>();
+                    ballRigidbody = ball.GetComponent<Rigidbody>();
 
-                ballRigidbody.AddForce(new Vector3(power, 0f, 0f), ForceMode.Impulse);
-                
-                se.shotSE();
+                    ballRigidbody.AddForce(new Vector3(power, 0f, 0f), ForceMode.Impulse);
 
-                Debug.Log("攻撃！！！");
+                    se.shotSE();
+
+                    Debug.Log("攻撃！！！");
+                }
+
+                yield return new WaitForSeconds(attackFrequency);
             }
-
-            yield return new WaitForSeconds(attackFrequency);
         }
     }
 

@@ -4,15 +4,44 @@ using UnityEngine;
 
 public class PlayData : MonoBehaviour
 {
-    private float DieInvaderCount = 0f;
+    private float invadersCount = 25f;
+    private float remaingInvaders = 25f;
+    private float attackCount = 0f;
+    [SerializeField]private float damage = 50f;
+    [SerializeField] private float invaderPoint = 200f;
 
-    public float KillCount()
+    /// <summary>
+    /// 倒した敵の数×一匹当たりのポイントを返す
+    /// </summary>
+    /// <returns></returns>
+    public float KillScore()
     {
-        return DieInvaderCount;
+        float score = 0f;
+        return score = (invadersCount-remaingInvaders) * invaderPoint;
     }
 
-    public float addKill()
+    public void AddKill()
     {
-        return DieInvaderCount++;
+        remaingInvaders--;
     }
+    public float NumberAlive()
+    {
+        return remaingInvaders;
+    }
+    /// <summary>
+    /// スルーした攻撃×ダメージを返す
+    /// </summary>
+    /// <returns></returns>
+    public float DamageScore()
+    {
+        return attackCount * damage;
+    }
+
+    public void AddDamage()
+    {
+        attackCount++;
+    }
+
+    
+    
 }

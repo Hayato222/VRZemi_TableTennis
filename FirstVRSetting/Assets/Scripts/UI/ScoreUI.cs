@@ -10,11 +10,10 @@ namespace ObjectTarget
     {
         public PlayData data;
         public TextMeshProUGUI inPlayScoreUI;
-        [SerializeField] private float InvadersPoint = 200f;
 
         void Update()
         {
-            inPlayScoreUI.text = "Score : " + data.KillCount() * InvadersPoint;
+            inPlayScoreUI.text = "Score : " + data.KillScore();
         }
     }
 }
